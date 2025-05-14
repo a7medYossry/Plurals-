@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرح الجمع في اللغة العربية - متقدم</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        /* Light Theme Variables */
+        :root {
+            --bg-color: #eef2f7;
+            --text-color: #333;
+            --slide-bg: #ffffff;
+            --slide-border: #d1d9e6;
+            --slide-shadow: rgba(0, 0, 0, 0.08);
+            --title-color: #0056b3;
+            --title-border: #007bff;
+            --subtitle-color: #5a6268;
+            --section-title-color: #17a2b8;
+            --section-title-border: #17a2b8;
+            --h4-color: #28a745;
+            --p-li-color: #495057;
+            --arabic-text-color: var(--text-color); /* Default to text-color */
+            --english-translation-color: #6c757d;
+            --english-translation-border: #e9ecef;
+            --example-box-bg: #f8f9fa;
+            --example-box-border: #ced4da;
+            --example-box-shadow: rgba(0,0,0,0.05);
+            --example-arabic-color: #0056b3;
+            --vocab-item-bg: #e6f7ff;
+            --vocab-item-border: #17a2b8;
+            --important-note-bg: #fff3cd;
+            --important-note-color: #856404;
+            --important-note-border: #ffeeba;
+            --important-note-shadow: rgba(255, 233, 186, 0.5);
+            --table-header-bg: #0069d9;
+            --table-border: #dee2e6;
+            --table-row-odd-bg: #f8f9fa;
+            --table-row-hover-bg: #e9ecef;
+            --rule-box-bg: #e6fff7;
+            --rule-box-border: #20c997;
+            --rule-box-title-color: #00624f;
+            --navbar-bg: #ffffff;
+            --navbar-text: #0056b3;
+            --navbar-shadow: rgba(0, 0, 0, 0.1);
+            --dropdown-bg: #ffffff;
+            --dropdown-hover-bg: #f0f0f0;
+            --theme-toggle-bg: #007bff;
+            --theme-toggle-icon: #fff;
+            --link-color: #007bff;
+        }
+
+        /* Dark Theme Variables */
+        .dark-theme {
+            --bg-color: #1a1a2e;
+            --text-color: #e0e0e0;
+            --slide-bg: #24243e;
+            --slide-border: #3a3a5a;
+            --slide-shadow: rgba(0, 0, 0, 0.2);
+            --title-color: #87cefa; /* Light Sky Blue */
+            --title-border: #87cefa;
+            --subtitle-color: #b0b0d0;
+            --section-title-color: #48d1cc; /* Medium Turquoise */
+            --section-title-border: #48d1cc;
+            --h4-color: #90ee90; /* Light Green */
+            --p-li-color: #c0c0e0;
+            --arabic-text-color: #f0f0f0; /* Brighter for Arabic in dark */
+            --english-translation-color: #a0a0c0;
+            --english-translation-border: #3a3a5a;
+            --example-box-bg: #1e1e36;
+            --example-box-border: #3a3a5a;
+            --example-box-shadow: rgba(0,0,0,0.15);
+            --example-arabic-color: #87cefa;
+            --vocab-item-bg: #2a2a4f;
+            --vocab-item-border: #48d1cc;
+            --important-note-bg: #4d422a;
+            --important-note-color: #ffe082;
+            --important-note-border: #a1887f;
+            --important-note-shadow: rgba(77, 66, 42, 0.5);
+            --table-header-bg: #87cefa;
+            --table-border: #4a4a6a;
+            --table-row-odd-bg: #1e1e36;
+            --table-row-hover-bg: #2f2f4f;
+            --rule-box-bg: #1c3b32;
+            --rule-box-border: #90ee90;
+            --rule-box-title-color: #b2f0b2;
+            --navbar-bg: #24243e;
+            --navbar-text: #87cefa;
+            --navbar-shadow: rgba(0, 0, 0, 0.3);
+            --dropdown-bg: #24243e;
+            --dropdown-hover-bg: #3a3a5a;
+            --theme-toggle-bg: #87cefa;
+            --theme-toggle-icon: #1a1a2e;
+            --link-color: #87cefa;
+        }
+        
+        /* General Styles */
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            direction: rtl;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding-top: 70px; /* Space for fixed navbar */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--navbar-bg);
+            box-shadow: 0 2px 10px var(--navbar-shadow);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            right: 0; /* For RTL */
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Amiri', serif;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--navbar-text);
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-right: 20px; /* For RTL */
+        }
+        .nav-item:last-child {
+            margin-right: 0;
+        }
+
+        .nav-link {
+            color: var(--navbar-text);
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .nav-link:hover, .dropdown-toggle:hover {
+            background-color: var(--dropdown-hover-bg);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0; /* For RTL */
+            background-color: var(--dropdown-bg);
+            box-shadow: 0 5px 15px var(--navbar-shadow);
+            border-radius: 5px;
+            padding: 10px 0;
+            min-width: 200px;
+            z-index: 1001;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-item {
+            display: block;
+            padding: 10px 15px;
+            color: var(--navbar-text);
+            text-decoration: none;
+            font-size: 1em;
+            white-space: nowrap;
+        }
+        .dropdown-item:hover {
+            background-color: var(--dropdown-hover-bg);
+        }
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            background-color: var(--theme-toggle-bg);
+            color: var(--theme-toggle-icon);
+            border: none;
+            padding: 8px 12px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+        #theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .slide {
+            border: 1px solid var(--slide-border);
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            background-color: var(--slide-bg);
+            box-shadow: 0 8px 25px var(--slide-shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlide 0.7s ease-out forwards;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Stagger animations for slides - kept same */
+        .slide:nth-child(1) { animation-delay: 0.1s; }
+        .slide:nth-child(2) { animation-delay: 0.2s; }
+        /* ... (add for all slides) ... */
+         .slide:nth-child(13) { animation-delay: 1.3s; }
+
+
+        @keyframes fadeInSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-title {
+            font-size: 2.2em;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--title-border);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .slide-title .icon {
+            font-size: 0.8em;
+            margin-right: 10px;
+            color: var(--title-color); /* Match title color */
+            transition: color 0.3s ease;
+        }
+        
+        .slide-subtitle {
+            font-size: 1.2em;
+            color: var(--subtitle-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+
+        h3.section-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.8em;
+            color: var(--section-title-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed var(--section-title-border);
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+         h3.section-title .icon {
+            font-size: 0.9em;
+            margin-left: 10px;
+             color: var(--section-title-color);
+             transition: color 0.3s ease;
+        }
+
+        h4 {
+            font-family: 'Amiri', serif;
+            font-size: 1.5em;
+            color: var(--h4-color);
+            margin-top: 25px;
+            margin-bottom: 12px;
+             display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        h4 .icon {
+            font-size: 0.8em;
+            margin-left: 8px;
+            color: var(--h4-color);
+            transition: color 0.3s ease;
+        }
+
+        p, li {
+            font-size: 1.15em;
+            margin-bottom: 12px;
+            color: var(--p-li-color);
+            transition: color 0.3s ease;
+        }
+
+        .arabic-text {
+            font-size: 1.4em; 
+            font-family: 'Amiri', 'Times New Roman', serif;
+            margin-bottom: 5px;
+            line-height: 1.9;
+            color: var(--arabic-text-color); /* Apply theme color */
+            transition: color 0.3s ease;
+        }
+
+        /* Updated .english-translation style */
+        .english-translation {
+            font-size: 0.95em;
+            color: var(--english-translation-color); 
+            margin-bottom: 0px; /* Updated */
+            display: block; 
+            direction: ltr; 
+            text-align: left; 
+            padding-left: 0px; /* Updated */
+            border-left: 3px solid var(--english-translation-border);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .example-box {
+            border: 1px solid var(--example-box-border);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: var(--example-box-bg);
+            box-shadow: 0 4px 12px var(--example-box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .example-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px var(--example-box-shadow); /* Adjusted for theme */
+        }
+
+        .example-box .arabic-text {
+            font-weight: bold;
+            color: var(--example-arabic-color);
+             transition: color 0.3s ease;
+        }
+
+        .vocab-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-right: 5px solid var(--vocab-item-border);
+            background-color: var(--vocab-item-bg);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px var(--example-box-shadow); /* Re-using for consistency */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Color Coding Classes - Unchanged for now, but can be themed if needed */
+        .c1 { color: #E91E63; } .c2 { color: #9C27B0; } .c3 { color: #3F51B5; }
+        .c4 { color: #03A9F4; } .c5 { color: #009688; } .c6 { color: #8BC34A; }
+        .c7 { color: #FFC107; } .c8 { color: #FF5722; } .c9 { color: #795548; }
+        .c10 { color: #607D8B; }
+        /* For dark theme, these might need adjustment if they clash */
+        .dark-theme .c1 { color: #f48fb1; } /* Lighter Pink */
+        .dark-theme .c2 { color: #ce93d8; } /* Lighter Purple */
+        .dark-theme .c3 { color: #9fa8da; } /* Lighter Indigo */
+        .dark-theme .c4 { color: #81d4fa; } /* Lighter Light Blue */
+        .dark-theme .c5 { color: #80cbc4; } /* Lighter Teal */
+        .dark-theme .c6 { color: #c5e1a5; } /* Lighter Light Green */
+        .dark-theme .c7 { color: #ffe082; } /* Lighter Amber */
+        .dark-theme .c8 { color: #ffab91; } /* Lighter Deep Orange */
+        .dark-theme .c9 { color: #bcaaa4; } /* Lighter Brown */
+        .dark-theme .c10 { color: #b0bec5; } /* Lighter Blue Grey */
+
+
+        .important-note {
+            background-color: var(--important-note-bg); 
+            color: var(--important-note-color);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--important-note-border);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px var(--important-note-shadow);
+             display: flex;
+            align-items: flex-start;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .important-note .icon {
+            font-size: 1.5em;
+            margin-left: 15px;
+            color: var(--important-note-color); /* Match note color */
+            transition: color 0.3s ease;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 1.05em;
+            box-shadow: 0 5px 15px var(--example-box-shadow); /* Re-using for consistency */
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid var(--table-border);
+            padding: 15px;
+            text-align: right;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--slide-bg); /* Contrast with header bg */
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+        }
+        tbody tr:nth-child(odd) {
+             background-color: var(--table-row-odd-bg);
+        }
+        tbody tr:hover {
+            background-color: var(--table-row-hover-bg);
+        }
+
+        .ltr-cell { direction: ltr; text-align: left; }
+        .rtl-cell { direction: rtl; text-align: right; }
+        
+        .bullet-icon {
+            margin-left: 8px;
+            color: var(--title-color); /* Match title color */
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+         .rule-box {
+            border: 2px solid var(--rule-box-border);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: var(--rule-box-bg);
+            box-shadow: 0 4px 10px var(--slide-shadow); /* Re-using for consistency */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .rule-box:hover {
+            background-color: var(--dropdown-hover-bg); /* Use dropdown hover for consistency */
+        }
+        .rule-box p:first-child {
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+            font-size: 1.3em;
+            color: var(--rule-box-title-color);
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+         .rule-box p:first-child .icon {
+            font-size: 0.9em;
+            margin-left: 10px;
+            color: var(--rule-box-title-color);
+            transition: color 0.3s ease;
+        }
+
+        .conclusion-icon {
+            font-size: 1.5em;
+            color: var(--h4-color); /* Green for conclusion */
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        .question-icon {
+            font-size: 1.8em;
+            color: var(--section-title-color); /* Cyan for questions */
+            transition: color 0.3s ease;
+        }
+
+        /* Icons (Unicode) - Kept same */
+        .icon-book::before { content: "📚"; margin-right: 5px; }
+        .icon-info::before { content: "ℹ️"; margin-right: 5px; }
+        .icon-lightbulb::before { content: "💡"; margin-right: 5px; }
+        .icon-list::before { content: "📋"; margin-right: 5px; }
+        .icon-grammar::before { content: "⚖️"; margin-right: 5px; }
+        .icon-warning::before { content: "⚠️"; margin-right: 5px;}
+        .icon-examples::before { content: "🔎"; margin-right: 5px;}
+        .icon-check::before { content: "✔️"; margin-right: 5px;}
+        .icon-question::before { content: "❓"; margin-right: 5px;}
+        .icon-star::before { content: "⭐"; margin-right: 5px;}
+
+        /* For anchor links from dropdown */
+        .slide-anchor {
+            display: block;
+            position: relative;
+            top: -80px; /* Adjust based on navbar height */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">الجمع في العربية</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link dropdown-toggle">الموضوعات <span style="font-size:0.7em;">▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#slide-intro">مقدمة</a></li>
+                    <li><a class="dropdown-item" href="#slide-definition">تعريف الجمع</a></li>
+                    <li><a class="dropdown-item" href="#slide-types">أنواع الجمع</a></li>
+                    <li><a class="dropdown-item" href="#slide-masc-plural">جمع المذكر السالم</a></li>
+                    <li><a class="dropdown-item" href="#slide-fem-plural">جمع المؤنث السالم</a></li>
+                    <li><a class="dropdown-item" href="#slide-broken-plural">جمع التكسير</a></li>
+                    <li><a class="dropdown-item" href="#slide-comparison">مقارنة</a></li>
+                    <li><a class="dropdown-item" href="#slide-tips">نصائح</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <button id="theme-toggle" title="تبديل الوضع">🌙</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Slide 1: Title -->
+        <div class="slide" id="slide-title-page"> <!-- Added id for potential linking -->
+            <span class="slide-anchor" id="slide-intro"></span> <!-- Anchor for dropdown -->
+            <h1 class="slide-title"><span class="icon icon-book"></span>
+                <span class="c1">الْجَمْعُ</span> <span class="c2">فِي</span> <span class="c3">اللُّغَةِ</span> <span class="c4">الْعَرَبِيَّةِ</span>
+            </h1>
+            <p class="english-translation">
+                <span class="c1">Plurals</span> <span class="c2">in</span> <span class="c3">the</span> <span class="c4">Arabic Language</span>
+            </p>
+            <p class="slide-subtitle">
+                <span class="c5">مُقَدِّمَةٌ</span> <span class="c6">لِطُلَّابِ</span> <span class="c7">اللُّغَةِ</span> <span class="c8">الْعَرَبِيَّةِ</span> <span class="c9">النَّاطِقِينَ</span> <span class="c10">بِالْإِنْجِلِيزِيَّةِ</span>
+            </p>
+            <p class="english-translation">
+                <span class="c5">An Introduction</span> <span class="c6">for</span> <span class="c7">Arabic Language</span> <span class="c8">Learners</span> <span class="c9">who are</span> <span class="c10">English-Speaking</span>
+            </p>
+        </div>
+
+        <!-- Slide 2: Introduction - The Importance of Arabic -->
+        <div class="slide">
+            <span class="slide-anchor"></span> <!-- No specific ID needed if not in dropdown -->
+            <h2 class="slide-title"><span class="icon icon-star"></span><span class="c1">اللُّغَةُ</span> <span class="c2">الْعَرَبِيَّةُ</span>: <span class="c3">لُغَةٌ</span> <span class="c4">غَنِيَّةٌ</span> <span class="c5">وَمُتَمَيِّزَةٌ</span></h2>
+            <p class="english-translation"><span class="c1">Arabic</span>: <span class="c3">A</span> <span class="c4">Rich</span> <span class="c5">and Distinct Language</span></p>
+            <ul>
+                <li>
+                    <p class="arabic-text"><span class="bullet-icon">❖</span> <span class="c1">لُغَةُ</span> <span class="c2">الْقُرْآنِ</span> <span class="c3">الْكَرِيمِ</span>.</p>
+                    <p class="english-translation"><span class="c1">The language</span> <span class="c2">of the</span> <span class="c3">Holy Quran</span>.</p>
+                </li>
+                <li>
+                    <p class="arabic-text"><span class="bullet-icon">❖</span> <span class="c1">لَهَا</span> <span class="c2">قَوَاعِدُ</span> <span class="c3">دَقِيقَةٌ</span> <span class="c4">فِي</span> <span class="c5">الْإِمْلَاءِ</span> <span class="c6">وَالنَّحْوِ</span> <span class="c7">وَالصَّرْفِ</span>.</p>
+                    <p class="english-translation"><span class="c1">It has</span> <span class="c2">precise rules</span> <span class="c4">in</span> <span class="c5">spelling</span>, <span class="c6">grammar</span>, <span class="c7">and morphology</span>.</p>
+                </li>
+                <li>
+                    <p class="arabic-text"><span class="bullet-icon">❖</span> <span class="c1">فَهْمُ</span> <span class="c2">الْجَمْعِ</span> <span class="c3">مُهِمٌّ</span> <span class="c4">لِفَهْمِ</span> <span class="c5">الْكَلَامِ</span> <span class="c6">وَالْكِتَابَةِ</span> <span class="c7">بِشَكْلٍ</span> <span class="c8">صَحِيحٍ</span>.</p>
+                    <p class="english-translation"><span class="c1">Understanding</span> <span class="c2">plurals</span> <span class="c3">is important</span> <span class="c4">for</span> <span class="c5">comprehending speech</span> <span class="c6">and writing</span> <span class="c7">correctly</span>.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: What is a Plural? -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-definition"></span>
+            <h2 class="slide-title"><span class="icon icon-info"></span><span class="c1">تَعْرِيفُ</span> <span class="c2">الْجَمْعِ</span> <span class="c3">فِي</span> <span class="c4">اللُّغَةِ</span> <span class="c5">الْعَرَبِيَّةِ</span></h2>
+            <p class="english-translation"><span class="c1">Definition</span> <span class="c2">of Plural</span> <span class="c3">in</span> <span class="c4">the</span> <span class="c5">Arabic Language</span></p>
+            <ul>
+                <li>
+                    <p class="arabic-text"><span class="bullet-icon">➤</span> <span class="c1">الْجَمْعُ</span> <span class="c2">هُوَ</span> <span class="c3">صِيغَةٌ</span> <span class="c4">تَدُلُّ</span> <span class="c5">عَلَى</span> <strong class="c6">أَكْثَرَ مِنِ اثْنَيْنِ (<span class="c7">لِلْمُذَكَّرِ</span>) أَوْ اثْنَتَيْنِ (<span class="c8">لِلْمُؤَنَّثِ</span>)</strong>.</p>
+                    <p class="english-translation"><span class="c1">The plural</span> <span class="c2">is</span> <span class="c3">a form</span> <span class="c4">that indicates</span> <strong class="c6">more than two</strong> (<span class="c7">for masculine</span>) <span class="c6">or two</span> (<span class="c8">for feminine</span>).</p>
+                </li>
+                <li>
+                    <p class="arabic-text"><span class="bullet-icon">➤</span> <span class="c1">هُوَ</span> <span class="c2">يُقَابِلُ</span> <strong class="c3">الْمُفْرَدَ</strong> (<span class="c4">الَّذِي</span> <span class="c5">يَدُلُّ</span> <span class="c6">عَلَى</span> <span class="c7">وَاحِدٍ</span> <span class="c8">أَوْ</span> <span class="c9">وَاحِدَةٍ</span>).</p>
+                    <p class="english-translation"><span class="c1">It</span> <span class="c2">is the opposite of</span> <strong class="c3">the singular</span>, (<span class="c4">which</span> <span class="c5">indicates</span> <span class="c7">one</span>).</p>
+                </li>
+                 <li>
+                    <p class="arabic-text"><span class="bullet-icon">➤</span> <span class="c1">فَهْمُ</span> <span class="c2">نَوْعِ</span> <span class="c3">الْجَمْعِ</span> <span class="c4">يُؤَثِّرُ</span> <span class="c5">عَلَى</span> <strong class="c6">الْإِعْرَابِ</strong> <span class="c8">وَالْمَعْنَى</span> <span class="c9">الْعَامِّ</span>.</p>
+                    <p class="english-translation"><span class="c1">Understanding</span> <span class="c2">the type</span> <span class="c3">of plural</span> <span class="c4">affects</span> <strong class="c6">the I‘rāb</strong> <span class="c8">and the</span> <span class="c9">overall meaning</span>.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Types of Plurals in Arabic -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-types"></span>
+            <h2 class="slide-title"><span class="icon icon-list"></span><span class="c1">أَنْوَاعُ</span> <span class="c2">الْجَمْعِ</span> <span class="c3">فِي</span> <span class="c4">اللُّغَةِ</span> <span class="c5">الْعَرَبِيَّةِ</span></h2>
+            <p class="english-translation"><span class="c1">Types</span> <span class="c2">of Plurals</span> <span class="c3">in</span> <span class="c4">the</span> <span class="c5">Arabic Language</span></p>
+            <p class="arabic-text"><span class="c1">لِلْجَمْعِ</span> <span class="c2">فِي</span> <span class="c3">اللُّغَةِ</span> <span class="c4">الْعَرَبِيَّةِ</span> <span class="c5">ثَلَاثَةُ</span> <span class="c6">أَنْوَاعٍ</span> <span class="c7">رَئِيسَةٍ</span>:</p>
+            <p class="english-translation"><span class="c1">There are</span> <span class="c5">three</span> <span class="c6">main types</span> <span class="c2">of</span> <span class="c1">plurals</span> <span class="c2">in</span> <span class="c3">Arabic</span>:</p>
+            <ol style="list-style-type: none; padding-right: 0;">
+                <li style="margin-bottom: 15px; background: var(--vocab-item-bg); padding:10px; border-radius: 5px; box-shadow: 0 2px 5px var(--example-box-shadow);">
+                    <p class="arabic-text"><strong style="font-size:1.2em; color: var(--title-color);">1.</strong> <span class="c1">جَمْعُ</span> <span class="c2">الْمُذَكَّرِ</span> <span class="c3">السَّالِمُ</span></p>
+                    <p class="english-translation" style="margin-bottom:0; padding-left: 35px;"><span class="c1">Sound</span> <span class="c2">Masculine</span> <span class="c3">Plural</span></p>
+                </li>
+                <li style="margin-bottom: 15px; background: var(--vocab-item-bg); padding:10px; border-radius: 5px; box-shadow: 0 2px 5px var(--example-box-shadow);">
+                    <p class="arabic-text"><strong style="font-size:1.2em; color: var(--h4-color);">2.</strong> <span class="c1">جَمْعُ</span> <span class="c2">الْمُؤَنَّثِ</span> <span class="c3">السَّالِمُ</span></p>
+                    <p class="english-translation" style="margin-bottom:0; padding-left: 35px;"><span class="c1">Sound</span> <span class="c2">Feminine</span> <span class="c3">Plural</span></p>
+                </li>
+                <li style="margin-bottom: 15px; background: var(--vocab-item-bg); padding:10px; border-radius: 5px; box-shadow: 0 2px 5px var(--example-box-shadow);">
+                    <p class="arabic-text"><strong style="font-size:1.2em; color: var(--important-note-color);">3.</strong> <span class="c1">جَمْعُ</span> <span class="c2">التَّكْسِيرِ</span></p>
+                    <p class="english-translation" style="margin-bottom:0; padding-left: 35px;"><span class="c1">Broken</span> <span class="c2">Plural</span></p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Slide 5: Sound Masculine Plural - Formation -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-masc-plural"></span>
+            <h2 class="slide-title"><span class="icon" style="color:var(--title-color);">♂️</span>1. <span class="c1">جَمْعُ</span> <span class="c2">الْمُذَكَّرِ</span> <span class="c3">السَّالِمُ</span></h2>
+            <p class="english-translation">1. <span class="c1">Sound</span> <span class="c2">Masculine</span> <span class="c3">Plural</span></p>
+            <div class="vocab-item">
+                <p class="arabic-text"><span class="c1">يَدُلُّ</span> <span class="c2">عَلَى</span> <span class="c3">أَكْثَرَ</span> <span class="c4">مِنِ</span> <span class="c5">اثْنَيْنِ</span> <span class="c6">مِنَ</span> <strong class="c7">الْمُذَكَّرِ الْعَاقِلِ</strong> (<span class="c8">غَالِبًا</span> <span class="c9">الْبَشَرِ</span>).</p>
+                <p class="english-translation"><span class="c1">Indicates</span> <span class="c3">more</span> <span class="c4">than</span> <span class="c5">two</span> <strong class="c7">rational masculine</strong> <span class="c6">beings</span> (<span class="c8">usually</span> <span class="c9">humans</span>).</p>
+            </div>
+            <h4><span class="icon">🛠️</span><span class="c1">كَيْفَ</span> <span class="c2">نُكَوِّنُهُ؟</span> (<span class="english-translation" style="display:inline; color: var(--h4-color);"><span class="c1">How</span> <span class="c2">do we form it?</span></span>)</h4>
+            <div class="rule-box">
+                <p><span class="icon">➕</span><span class="arabic-text"><span class="c1">نُضِيفُ</span> <strong style="color: #E91E63; font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">ـُونَ</strong> <span class="c2">إِلَى</span> <span class="c3">آخِرِ</span> <span class="c4">الِاسْمِ</span> <span class="c5">الْمُفْرَدِ</span> <span class="c6">فِي</span> <span class="c7">حَالَةِ</span> <strong class="c8">الرَّفْعِ</strong>.</span></p>
+                <p class="english-translation"><span class="c1">Add</span> <strong style="color: #E91E63; font-weight:bold;">ـُونَ (-ūna)</strong> <span class="c2">to</span> <span class="c3">the end</span> <span class="c4">of the</span> <span class="c5">singular noun</span> <span class="c6">in</span> <span class="c7">the</span> <strong class="c8">nominative case</strong>.</p>
+            </div>
+            <div class="rule-box">
+                <p><span class="icon">➕</span><span class="arabic-text"><span class="c1">نُضِيفُ</span> <strong style="color: #E91E63; font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">ـِينَ</strong> <span class="c2">إِلَى</span> <span class="c3">آخِرِ</span> <span class="c4">الِاسْمِ</span> <span class="c5">الْمُفْرَدِ</span> <span class="c6">فِي</span> <span class="c7">حَالَتَيِ</span> <strong class="c8">النَّصْبِ وَالْجَرِّ</strong>.</span></p>
+                <p class="english-translation"><span class="c1">Add</span> <strong style="color: #E91E63; font-weight:bold;">ـِينَ (-īna)</strong> <span class="c2">to</span> <span class="c3">the end</span> <span class="c4">of the</span> <span class="c5">singular noun</span> <span class="c6">in</span> <span class="c7">the</span> <strong class="c8">accusative & genitive cases</strong>.</p>
+            </div>
+            <h4><span class="icon icon-examples"></span><span class="c1">أَمْثِلَةٌ</span> (<span class="english-translation" style="display:inline; color: var(--h4-color);"><span class="c1">Examples</span></span>):</h4>
+            <div class="example-box">
+                <p class="arabic-text"><span class="c1">مُعَلِّمٌ</span> (<span class="english-translation" style="display:inline; color: var(--english-translation-color);"><span class="c1">teacher</span></span>)  →  <span class="c2">مُعَلِّمُـ</span><strong style="color: #E91E63; font-weight:bold;">ونَ</strong> / <span class="c2">مُعَلِّمِـ</span><strong style="color: #E91E63; font-weight:bold;">ينَ</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Sound Masculine Plural - I‘rāb -->
+        <div class="slide">
+             <span class="slide-anchor"></span> <!-- No ID if not in dropdown -->
+            <h3 class="section-title"><span class="icon icon-grammar"></span><span class="c1">إِعْرَابُ</span> <span class="c2">جَمْعِ</span> <span class="c3">الْمُذَكَّرِ</span> <span class="c4">السَّالِمِ</span></h3>
+            <p class="english-translation"><span class="c1">I‘rāb</span> <span class="c2">of Sound</span> <span class="c3">Masculine</span> <span class="c4">Plural</span></p>
+            <div class="rule-box">
+                <p><span class="icon">⬆️</span><strong class="c1">فِي حَالَةِ الرَّفْعِ</strong>:</p>
+                <p class="arabic-text"><span class="c2">عَلَامَةُ</span> <span class="c3">رَفْعِهِ</span> <strong class="c4" style="color: var(--h4-color); font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">الْوَاوُ (و)</strong>.</p>
+            </div>
+            <div class="rule-box">
+                <p><span class="icon">➡️</span><strong class="c1">فِي حَالَةِ النَّصْبِ</strong>:</p>
+                <p class="arabic-text"><span class="c2">عَلَامَةُ</span> <span class="c3">نَصْبِهِ</span> <strong class="c4" style="color: var(--h4-color); font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">الْيَاءُ (ي)</strong>.</p>
+            </div>
+            <div class="rule-box">
+                 <p><span class="icon">↘️</span><strong class="c1">فِي حَالَةِ الْجَرِّ</strong>:</p>
+                <p class="arabic-text"><span class="c2">عَلَامَةُ</span> <span class="c3">جَرِّهِ</span> <strong class="c4" style="color: var(--h4-color); font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">الْيَاءُ (ي)</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Sound Feminine Plural - Formation -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-fem-plural"></span>
+            <h2 class="slide-title"><span class="icon" style="color:var(--important-note-color);">♀️</span>2. <span class="c1">جَمْعُ</span> <span class="c2">الْمُؤَنَّثِ</span> <span class="c3">السَّالِمُ</span></h2>
+             <p class="english-translation">2. <span class="c1">Sound</span> <span class="c2">Feminine</span> <span class="c3">Plural</span></p>
+            <div class="vocab-item">
+                <p class="arabic-text"><span class="c1">يَدُلُّ</span> <span class="c2">عَلَى</span> <span class="c3">أَكْثَرَ</span> <span class="c4">مِنِ</span> <span class="c5">اثْنَتَيْنِ</span> <span class="c6">مِنَ</span> <strong class="c7">الْمُؤَنَّثِ</strong>.</p>
+            </div>
+            <h4><span class="icon">🛠️</span><span class="c1">كَيْفَ</span> <span class="c2">نُكَوِّنُهُ؟</span></h4>
+            <div class="rule-box">
+                <p><span class="icon">✂️</span><span class="arabic-text"><span class="c1">نَحْذِفُ</span> <span class="c2">التَّاءَ الْمَرْبُوطَةَ</span> (<strong style="color: #E91E63; background: var(--example-box-bg); padding: 0 3px; border-radius:3px;">ة</strong>) <span class="c4">إِنْ</span> <span class="c8">وُجِدَتْ</span>.</span></p>
+            </div>
+            <div class="rule-box">
+                <p><span class="icon">➕</span><span class="arabic-text"><span class="c1">نُضِيفُ</span> <strong style="color: #E91E63; font-weight:bold; background: var(--example-box-bg); padding: 0 5px; border-radius:3px;">ـَاتٌ</strong>.</span></p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Sound Feminine Plural - I‘rāb -->
+        <div class="slide">
+            <span class="slide-anchor"></span> <!-- No ID if not in dropdown -->
+            <h3 class="section-title"><span class="icon icon-grammar"></span><span class="c1">إِعْرَابُ</span> <span class="c2">جَمْعِ</span> <span class="c3">الْمُؤَنَّثِ</span> <span class="c4">السَّالِمِ</span></h3>
+            <div class="important-note">
+                <span class="icon icon-warning"></span>
+                <div>
+                    <p style="font-weight:bold; color: var(--important-note-color);"><strong class="c1">فِي حَالَةِ النَّصْبِ</strong>: <strong style="font-size:1.1em; color: #E91E63;">🔔 <span class="c2">انْتَبِهْ!</span></strong></p>
+                    <p class="arabic-text"><span class="c3">عَلَامَةُ</span> <span class="c4">نَصْبِهِ</span> <strong class="c5" style="color: #E91E63; font-weight:bold; background: var(--important-note-bg); padding: 0 5px; border-radius:3px;">الْكَسْرَةُ (ـِ) بَدَلَ الْفَتْحَةِ!</strong></p>
+                </div>
+            </div>
+            <div class="example-box">
+                 <p class="arabic-text"><span class="c1">الْمُعَلِّمَـ</span><strong style="color: #E91E63; font-weight:bold;">اتُ</strong> (<span class="c1">رَفْعٌ بِالضَّمَّةِ</span>)</p>
+                 <p class="arabic-text"><span class="c1">رَأَيْتُ</span> <span class="c2">الْمُعَلِّمَـ</span><strong style="color: #E91E63; font-weight:bold;">اتِ</strong> (<span class="c1" style="color: #E91E63;">نَصْبٌ بِالْكَسْرَةِ!</span>)</p>
+                 <p class="arabic-text"><span class="c1">بِـ</span><span class="c3">الْمُعَلِّمَـ</span><strong style="color: #E91E63; font-weight:bold;">اتِ</strong> (<span class="c1">جَرٌّ بِالْكَسْرَةِ</span>)</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Broken Plural - Concept -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-broken-plural"></span>
+            <h2 class="slide-title"><span class="icon">🧱</span>3. <span class="c1">جَمْعُ</span> <span class="c2">التَّكْسِيرِ</span></h2>
+            <div class="vocab-item">
+                <p class="arabic-text">"<span class="c1">تَكْسِيرٌ</span>" <span class="c3">يَعْنِي</span> <strong class="c5">تَغَيُّرَ شَكْلِ الْمُفْرَدِ</strong>.</p>
+            </div>
+             <div class="vocab-item" style="background-color: var(--important-note-bg);">
+                <p class="arabic-text"><span class="icon" style="color:var(--important-note-color);">🧠</span> <strong class="c8">لَهُ أَوْزَانٌ مُتَعَدِّدَةٌ</strong> <span class="c9">يَجِبُ</span> <span class="c10">حِفْظُهَا</span>.</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Broken Plural - I‘rāb -->
+        <div class="slide">
+             <span class="slide-anchor"></span> <!-- No ID if not in dropdown -->
+            <h3 class="section-title"><span class="icon icon-grammar"></span><span class="c1">إِعْرَابُ</span> <span class="c2">جَمْعِ</span> <span class="c3">التَّكْسِيرِ</span></h3>
+            <div class="vocab-item">
+                <p class="arabic-text"><span class="c1">يُعْرَبُ</span> <strong class="c5">كَالِاسْمِ الْمُفْرَدِ</strong> (<span class="c8">ضَمَّة</span>، <span class="c9">فَتْحَة</span>، <span class="c10">كَسْرَة</span>).</p>
+            </div>
+        </div>
+        
+        <!-- Slide 11: Quick Comparison -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-comparison"></span>
+            <h2 class="slide-title"><span class="icon">📊</span><span class="c1">مُقَارَنَةٌ</span> <span class="c2">سَرِيعَةٌ</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th><span class="c1">النَّوْعُ</span></th>
+                        <th><span class="c3">الْإِعْرَابُ الرَّئِيسِيُّ</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rtl-cell"><strong><span class="c1">ج. مُذَكَّر سَالِم</span></strong></td>
+                        <td class="rtl-cell"><span class="c1">رَفْع:</span> <strong style="color:var(--h4-color)">وَاو</strong>, <span class="c2">نَصْب/جَرّ:</span> <strong style="color:var(--h4-color)">يَاء</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="rtl-cell"><strong><span class="c1">ج. مُؤَنَّث سَالِم</span></strong></td>
+                        <td class="rtl-cell" style="background-color: var(--important-note-bg) !important;"><span class="c1">رَفْع:</span> <strong style="color:var(--h4-color)">ضَمَّة</strong>, <span class="c2">نَصْب(!):</span> <strong style="color:#E91E63">كَسْرَة</strong>, <span class="c3">جَرّ:</span> <strong style="color:var(--h4-color)">كَسْرَة</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="rtl-cell"><strong><span class="c1">ج. تَكْسِير</span></strong></td>
+                        <td class="rtl-cell"><span class="c1">كَالْمُفْرَدِ</span> (<span class="c2">ضَمَّة</span>، <span class="c3">فَتْحَة</span>، <span class="c4">كَسْرَة</span>)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 12: Tips for Learners -->
+        <div class="slide">
+            <span class="slide-anchor" id="slide-tips"></span>
+            <h2 class="slide-title"><span class="icon">🌟</span><span class="c1">نَصَائِحُ</span> <span class="c2">لِلتَّعَلُّمِ</span></h2>
+            <ul style="list-style: none; padding-right:0;">
+                <li style="margin-bottom: 10px; display:flex; align-items:center;"><span class="bullet-icon" style="font-size:1.5em; color:var(--c7);">🧠</span><p class="arabic-text" style="margin:0;"><strong class="c1">الْحِفْظُ وَالتَّمْرِينُ</strong>.</p></li>
+                <li style="margin-bottom: 10px; display:flex; align-items:center;"><span class="bullet-icon" style="font-size:1.5em; color:var(--c4);">📖</span><p class="arabic-text" style="margin:0;"><strong class="c1">الْقِرَاءَةُ الْكَثِيرَةُ</strong>.</p></li>
+                 <li style="margin-bottom: 10px; display:flex; align-items:center;"><span class="bullet-icon" style="font-size:1.5em; color:var(--c2);">🎧</span><p class="arabic-text" style="margin:0;"><strong class="c1">الِاسْتِمَاعُ الْجَيِّدُ</strong>.</p></li>
+                 <li style="margin-bottom: 10px; display:flex; align-items:center;"><span class="bullet-icon" style="font-size:1.5em; color:var(--c5);">💪</span><p class="arabic-text" style="margin:0;"><strong class="c1">لَا تَخَفْ مِنَ الْخَطَأِ</strong>.</p></li>
+            </ul>
+        </div>
+        
+        <!-- Slide 13: Conclusion -->
+        <div class="slide">
+             <span class="slide-anchor"></span> <!-- No ID if not in dropdown -->
+            <h2 class="slide-title"><span class="icon icon-check"></span><span class="c1">خَاتِمَةٌ</span></h2>
+            <ul>
+                <li>
+                    <p class="arabic-text"><span class="conclusion-icon">🎯</span> <span class="c1">فَهْمُ</span> <span class="c2">الْجَمْعِ</span> <span class="c5">مُهِمٌّ</span> <span class="c7">لِإِتْقَانِ</span> <span class="c8">الْعَرَبِيَّةِ</span>.</p>
+                </li>
+                <li>
+                    <p class="arabic-text"><span class="conclusion-icon">💡</span> <span class="c1">وَاصِلِ</span> <span class="c2">التَّدْرِيبَ</span>!</p>
+                </li>
+            </ul>
+            <h3 style="text-align: center; margin-top: 40px;"><span class="question-icon icon-question"></span><span class="c1">أَيُّ</span> <span class="c2">أَسْئِلَةٍ؟</span></h3>
+        </div>
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // Function to set theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️'; // Sun icon for light mode
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-theme');
+                themeToggle.textContent = '🌙'; // Moon icon for dark mode
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDarkScheme.matches) {
+            setTheme('dark');
+        } else {
+            setTheme('light'); // Default to light
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+
+        // Optional: Listen for system theme changes
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) { // Only if no user preference is set
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Smooth scrolling for dropdown links
+        document.querySelectorAll('.dropdown-item').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close dropdown after click (optional)
+                        const dropdownMenu = this.closest('.dropdown-menu');
+                        if (dropdownMenu) {
+                            // A bit of a hack to hide it, ideally toggle a class
+                           // dropdownMenu.style.display = 'none'; 
+                           // setTimeout(() => dropdownMenu.style.display = '', 100); // Re-enable hover
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
